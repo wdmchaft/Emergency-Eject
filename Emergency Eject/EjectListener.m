@@ -45,24 +45,15 @@ static void diskAppeared(DADiskRef disk, void *context);
 static void diskAppeared(DADiskRef disk, void *context) {
 	EjectListener* self = context;
 	
-	//Some findings about the description keys:
-	//kDADiskDescriptionVolumeKindKey - partition format
-	//kDADiskDescriptionMediaNameKey - Drive name
-	//kDADiskDescriptionVolumeNameKey - Volume Name
-	//kDADiskDescriptionDeviceInternalKey - Internal(1) or external(0)
-	//kDADiskDescriptionDeviceProtocolKey - SATA, IDE, USB...etc
-	//kDADiskDescriptionMediaWholeKey - Media(1) or Volume(0)
-	//kDADiskDescriptionMediaRemovableKey - Removable(1) or NotRemovable(0)
-	
 	//Get the description dictionary
 	NSDictionary* desc = (NSDictionary*)DADiskCopyDescription(disk);
 	
-	bool removable = [desc objectForKey: (NSString*)kDADiskDescriptionMediaRemovableKey];
-	//bool whole = [desc objectForKey: (NSString*)kDADiskDescriptionMediaWholeKey];
+	bool mountable = [desc objectForKey: (NSString*)kDADiskDescriptionVolumeMountableKey];
 	bool ejectable = [desc objectForKey: (NSString*)kDADiskDescriptionMediaEjectableKey];
+	NSString* protocol = [desc objectForKey: (NSString*)kDADiskDescriptionDeviceProtocolKey];
 	
-	//Only proceed if this is an external media device that can be removed
-	if(removable && ejectable) {
+	//Only proceed if this is an external media partition that is mountable/unmountable
+	if(mountable && ejectable && ![protocol isEqualToString:@"SATA"] && ![protocol isEqualToString:@"IDE"]) {
 		[self performSelectorOnMainThread:@selector(doDiskEject:) withObject:(void*)disk waitUntilDone:NO];
 	}
 }
@@ -97,7 +88,6 @@ static CGEventRef receiveEvent(CGEventTapProxy proxy, CGEventType type, CGEventR
 	} else {
 		@try {
 			[self.ejectedDisks addObject:[desc objectForKey: (NSString*)kDADiskDescriptionVolumeNameKey]];
-			//DADiskEject(disk, kDADiskEjectOptionDefault, NULL, NULL);
 			DADiskUnmount(disk, kDADiskUnmountOptionDefault, NULL, NULL);
 		}
 		@catch (NSException *exception) {

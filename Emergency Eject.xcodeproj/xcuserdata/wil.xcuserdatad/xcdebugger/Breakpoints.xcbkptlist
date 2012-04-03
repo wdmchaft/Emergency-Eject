@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
+         timestampString = "355171351.23427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "diskAppeared()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
+         timestampString = "355171351.23427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "diskAppeared()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
+         timestampString = "355171351.23427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
          landmarkName = "-doDiskEject:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
+         timestampString = "355171351.23427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
          landmarkName = "-doDiskEject:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,26 +79,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
+         timestampString = "355171351.23427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "receiveEvent()"
-         landmarkType = "7">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Emergency Eject/EjectListener.m"
-         timestampString = "355002959.21433"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "diskAppeared()"
          landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
